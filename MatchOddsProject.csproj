@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8131f652-5181-4279-b87c-0bc0c01be3e5</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220426121123_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220426121123_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220426121850_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220426121850_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220426122605_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220426122605_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220426122641_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220426122641_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220426123057_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220426123057_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220426125111_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220426125111_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220428101204_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220428101204_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220429112010_initialcreate.cs" />
+    <Compile Remove="Migrations\20220429112010_initialcreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.24">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+
+</Project>
