@@ -1,5 +1,6 @@
 ﻿using MatchOddsProject.Database;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -17,10 +18,18 @@ namespace MatchOddsProject.Migrations
         /// <param name="app"></param>
         public static void DatabaseMigrate(this IApplicationBuilder app)
         {
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            try
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                context.Database.Migrate();
+                using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+                {
+                    var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                    context.Database.Migrate();
+                }
+            }
+            catch (SqlException)
+            {
+                //couldnt connect to database 
+                //throw; //disabled for testing purposes
             }
         }
     }
